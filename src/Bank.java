@@ -83,11 +83,16 @@ public class Bank {
     public User userLogin(String userID, String pin){
 
         // Search through lists of users for userID
-        for(User u: this.users){
+
+        for(User u : this.users){
             if(u.getUUID().compareTo(userID) ==0 && u.validatePin(pin)){
                 return u;
             }
         }
         return null;
+    }
+
+    public String getName() {
+        return this.bankName;
     }
 }
